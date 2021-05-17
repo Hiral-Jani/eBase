@@ -3,7 +3,11 @@
 function make_pipeline(...$funcs)
 {
 	return function ($arg) use ($funcs) {
-		return -1;
+		foreach ($funcs as $fnc) {
+            		$arg = $fnc($arg);
+        	}
+
+        	return $arg;
 	};
 }
 
