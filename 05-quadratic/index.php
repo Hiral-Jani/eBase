@@ -5,7 +5,16 @@
  */
 function findRoots($a, $b, $c)
 {
-	return null;
+	$t = $b*$b - 4*$a*$c;
+    if ($t >= 0){
+        $x1 = (-$b + sqrt($t))/(2*$a);
+        $x2 = (-$b - sqrt($t))/(2*$a);
+        return [$x1, $x2];
+    } else {
+        $x1 = -$b/(2*$a);
+        $x2 = sqrt(-$t)/(2*$a);
+        return [$x1, $x2];
+    }
 }
 
 print_r(findRoots(2, 10, 8));
